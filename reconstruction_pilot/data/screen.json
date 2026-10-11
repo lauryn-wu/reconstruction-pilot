@@ -1,0 +1,29 @@
+{
+  "protocol_version": "reconstruction-screen-v1",
+  "seed": 20261011,
+  "budget_usd": "10.00",
+  "model": "claude-sonnet-5-5",
+  "effort": "high",
+  "input_usd_per_million": "2.00",
+  "output_usd_per_million": "10.00",
+  "pricing_checked": "2026-10-11",
+  "pricing_valid_through": "2026-10-25",
+  "max_input_tokens": 1800,
+  "input_margin_tokens": 256,
+  "max_output_tokens": 4096,
+  "probe_max_output_tokens": 2048,
+  "max_attempts_per_cell": 2,
+  "timeout_seconds": 180,
+  "thresholds": {
+    "minimum_control_correct": 22,
+    "minimum_qualified_tasks": 20,
+    "minimum_baseline_false_accepts": 5,
+    "minimum_joint_cases": 3,
+    "minimum_joint_families": 2,
+    "minimum_joint_rescues": 2,
+    "minimum_repair_over_foil_count": 3,
+    "minimum_net_rejection_gain": 3,
+    "minimum_intervention_families": 2,
+    "maximum_excess_valid_rejections": 1
+  }
+}
