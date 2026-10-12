@@ -1,0 +1,1296 @@
+{
+  "mode": "live",
+  "model": "claude-sonnet-5-5",
+  "decision": "stop_no_clear_failure",
+  "simulated_decision": null,
+  "valid_cells": 240,
+  "total_cells": 240,
+  "complete_tasks": 24,
+  "total_tasks": 24,
+  "first_attempt_valid_cells": 240,
+  "attempt_status_counts": {
+    "valid": 240
+  },
+  "criteria": {
+    "all_cells_complete": true,
+    "no_usage_assumption_breach": true,
+    "controls_pass": true,
+    "enough_qualified_tasks": true,
+    "baseline_failure_present": false,
+    "enough_joint_cases": false,
+    "joint_in_multiple_families": false,
+    "joint_cases_rescued": false,
+    "repair_specific_attribution": false,
+    "source_beats_generic": false,
+    "intervention_in_multiple_families": false,
+    "limited_extra_rejection_of_valid_work": true
+  },
+  "thresholds": {
+    "maximum_excess_valid_rejections": 1,
+    "minimum_baseline_false_accepts": 5,
+    "minimum_control_correct": 22,
+    "minimum_intervention_families": 2,
+    "minimum_joint_cases": 3,
+    "minimum_joint_families": 2,
+    "minimum_joint_rescues": 2,
+    "minimum_net_rejection_gain": 3,
+    "minimum_qualified_tasks": 20,
+    "minimum_repair_over_foil_count": 3
+  },
+  "control_accuracy": {
+    "solve": {
+      "correct": 24,
+      "valid": 24,
+      "total": 24,
+      "rate": 1.0
+    },
+    "good_neutral": {
+      "correct": 24,
+      "valid": 24,
+      "total": 24,
+      "rate": 1.0
+    },
+    "good_generic": {
+      "correct": 23,
+      "valid": 24,
+      "total": 24,
+      "rate": 0.9583333333333334
+    },
+    "good_source": {
+      "correct": 24,
+      "valid": 24,
+      "total": 24,
+      "rate": 1.0
+    },
+    "wrong_neutral": {
+      "correct": 24,
+      "valid": 24,
+      "total": 24,
+      "rate": 1.0
+    },
+    "probe_good_repair": {
+      "correct": 24,
+      "valid": 24,
+      "total": 24,
+      "rate": 1.0
+    },
+    "probe_good_anchor": {
+      "correct": 24,
+      "valid": 24,
+      "total": 24,
+      "rate": 1.0
+    },
+    "probe_good_foil": {
+      "correct": 24,
+      "valid": 24,
+      "total": 24,
+      "rate": 1.0
+    },
+    "probe_bad_anchor": {
+      "correct": 24,
+      "valid": 24,
+      "total": 24,
+      "rate": 1.0
+    },
+    "probe_bad_foil": {
+      "correct": 24,
+      "valid": 24,
+      "total": 24,
+      "rate": 1.0
+    }
+  },
+  "baseline_false_accepts": 0,
+  "qualified_tasks": 24,
+  "joint_cases": [],
+  "joint_by_family": {},
+  "joint_rescues": 0,
+  "bad_probe_repair_false_attributions": 0,
+  "bad_probe_foil_false_attributions": 0,
+  "bad_probe_repair_nonverbatim_quotes": 0,
+  "source_vs_generic_bad": {
+    "benefits": 0,
+    "harms": 0,
+    "net_count": 0,
+    "total": 24,
+    "net_rate": 0.0,
+    "descriptive_exact_p": 1.0
+  },
+  "source_vs_generic_good": {
+    "benefits": 1,
+    "harms": 0,
+    "net_count": 1,
+    "total": 24,
+    "net_rate": 0.041666666666666664,
+    "descriptive_exact_p": 1.0
+  },
+  "bad_intervention_net_by_family": {
+    "arithmetic": 0,
+    "code": 0,
+    "algebra": 0
+  },
+  "cost": {
+    "reserved_exposure_usd": "9.711360",
+    "known_usage_cost_usd": "0.616630",
+    "unknown_cost_attempts": 0,
+    "budget_usd": "10.00"
+  },
+  "last_stop": {
+    "at": "2026-10-12T00:05:33.901649+00:00",
+    "reason": "Collection pass finished. Failed/dependent cells, if any, remain incomplete."
+  },
+  "tasks": [
+    {
+      "task": "discount-03",
+      "family": "arithmetic",
+      "template": "discount",
+      "complete": true,
+      "qualified": true,
+      "joint_proxy": false,
+      "baseline_false_accept": false,
+      "verdicts": {
+        "bad_neutral": "invalid",
+        "good_neutral": "valid",
+        "good_generic": "valid",
+        "good_source": "valid",
+        "wrong_neutral": "invalid",
+        "bad_generic": "invalid",
+        "bad_source": "invalid"
+      },
+      "source_probes": {
+        "probe_bad": {
+          "repair": {
+            "present": false,
+            "quote": ""
+          },
+          "foil": {
+            "present": false,
+            "quote": ""
+          },
+          "anchor": {
+            "present": true,
+            "quote": "After the first discount alone the price is 2240 dollars."
+          }
+        },
+        "probe_good": {
+          "repair": {
+            "present": true,
+            "quote": "The remaining price fraction is (1 - 20/100) * (1 - 25/100) = 0.6."
+          },
+          "foil": {
+            "present": false,
+            "quote": ""
+          },
+          "anchor": {
+            "present": true,
+            "quote": "After the first discount alone the price is 2240 dollars."
+          }
+        }
+      }
+    },
+    {
+      "task": "discount-04",
+      "family": "arithmetic",
+      "template": "discount",
+      "complete": true,
+      "qualified": true,
+      "joint_proxy": false,
+      "baseline_false_accept": false,
+      "verdicts": {
+        "bad_neutral": "invalid",
+        "good_neutral": "valid",
+        "good_generic": "valid",
+        "bad_source": "invalid",
+        "bad_generic": "invalid",
+        "wrong_neutral": "invalid",
+        "good_source": "valid"
+      },
+      "source_probes": {
+        "probe_bad": {
+          "anchor": {
+            "present": true,
+            "quote": "After the first discount alone the price is 2560 dollars."
+          },
+          "foil": {
+            "present": false,
+            "quote": ""
+          },
+          "repair": {
+            "present": false,
+            "quote": ""
+          }
+        },
+        "probe_good": {
+          "anchor": {
+            "present": true,
+            "quote": "After the first discount alone the price is 2560 dollars."
+          },
+          "foil": {
+            "present": false,
+            "quote": ""
+          },
+          "repair": {
+            "present": true,
+            "quote": "The remaining price fraction is (1 - 20/100) * (1 - 25/100) = 0.6."
+          }
+        }
+      }
+    },
+    {
+      "task": "discount-01",
+      "family": "arithmetic",
+      "template": "discount",
+      "complete": true,
+      "qualified": true,
+      "joint_proxy": false,
+      "baseline_false_accept": false,
+      "verdicts": {
+        "bad_neutral": "invalid",
+        "good_neutral": "valid",
+        "wrong_neutral": "invalid",
+        "bad_generic": "invalid",
+        "bad_source": "invalid",
+        "good_source": "valid",
+        "good_generic": "invalid"
+      },
+      "source_probes": {
+        "probe_bad": {
+          "repair": {
+            "present": false,
+            "quote": ""
+          },
+          "foil": {
+            "present": false,
+            "quote": ""
+          },
+          "anchor": {
+            "present": true,
+            "quote": "After the first discount alone the price is 1600 dollars."
+          }
+        },
+        "probe_good": {
+          "repair": {
+            "present": true,
+            "quote": "The remaining price fraction is (1 - 20/100) * (1 - 25/100) = 0.6."
+          },
+          "foil": {
+            "present": false,
+            "quote": ""
+          },
+          "anchor": {
+            "present": true,
+            "quote": "After the first discount alone the price is 1600 dollars."
+          }
+        }
+      }
+    },
+    {
+      "task": "range-02",
+      "family": "code",
+      "template": "range",
+      "complete": true,
+      "qualified": true,
+      "joint_proxy": false,
+      "baseline_false_accept": false,
+      "verdicts": {
+        "bad_neutral": "invalid",
+        "good_neutral": "valid",
+        "bad_source": "invalid",
+        "wrong_neutral": "invalid",
+        "good_source": "valid",
+        "bad_generic": "invalid",
+        "good_generic": "valid"
+      },
+      "source_probes": {
+        "probe_bad": {
+          "foil": {
+            "present": false,
+            "quote": ""
+          },
+          "anchor": {
+            "present": true,
+            "quote": "The initial value of total is 5."
+          },
+          "repair": {
+            "present": false,
+            "quote": ""
+          }
+        },
+        "probe_good": {
+          "foil": {
+            "present": false,
+            "quote": ""
+          },
+          "anchor": {
+            "present": true,
+            "quote": "The initial value of total is 5."
+          },
+          "repair": {
+            "present": true,
+            "quote": "The loop visits exactly 4, 5, 6, 7, 8; the upper endpoint 9 is excluded."
+          }
+        }
+      }
+    },
+    {
+      "task": "linear-02",
+      "family": "algebra",
+      "template": "linear",
+      "complete": true,
+      "qualified": true,
+      "joint_proxy": false,
+      "baseline_false_accept": false,
+      "verdicts": {
+        "bad_neutral": "invalid",
+        "good_neutral": "valid",
+        "good_source": "valid",
+        "bad_generic": "invalid",
+        "bad_source": "invalid",
+        "good_generic": "valid",
+        "wrong_neutral": "invalid"
+      },
+      "source_probes": {
+        "probe_bad": {
+          "repair": {
+            "present": false,
+            "quote": ""
+          },
+          "foil": {
+            "present": false,
+            "quote": ""
+          },
+          "anchor": {
+            "present": true,
+            "quote": "The coefficient of x in the original equation is 4."
+          }
+        },
+        "probe_good": {
+          "repair": {
+            "present": true,
+            "quote": "Subtracting 8 from both sides gives 4*x = 60."
+          },
+          "foil": {
+            "present": false,
+            "quote": ""
+          },
+          "anchor": {
+            "present": true,
+            "quote": "The coefficient of x in the original equation is 4."
+          }
+        }
+      }
+    },
+    {
+      "task": "system-01",
+      "family": "algebra",
+      "template": "system",
+      "complete": true,
+      "qualified": true,
+      "joint_proxy": false,
+      "baseline_false_accept": false,
+      "verdicts": {
+        "bad_neutral": "invalid",
+        "good_neutral": "valid",
+        "bad_source": "invalid",
+        "wrong_neutral": "invalid",
+        "bad_generic": "invalid",
+        "good_source": "valid",
+        "good_generic": "valid"
+      },
+      "source_probes": {
+        "probe_bad": {
+          "repair": {
+            "present": false,
+            "quote": ""
+          },
+          "anchor": {
+            "present": true,
+            "quote": "The right-hand side of the second equation is 11."
+          },
+          "foil": {
+            "present": false,
+            "quote": ""
+          }
+        },
+        "probe_good": {
+          "repair": {
+            "present": true,
+            "quote": "Adding the equations eliminates y and gives 2*x = 38."
+          },
+          "anchor": {
+            "present": true,
+            "quote": "The right-hand side of the second equation is 11."
+          },
+          "foil": {
+            "present": false,
+            "quote": ""
+          }
+        }
+      }
+    },
+    {
+      "task": "range-04",
+      "family": "code",
+      "template": "range",
+      "complete": true,
+      "qualified": true,
+      "joint_proxy": false,
+      "baseline_false_accept": false,
+      "verdicts": {
+        "bad_neutral": "invalid",
+        "good_neutral": "valid",
+        "good_generic": "valid",
+        "bad_source": "invalid",
+        "wrong_neutral": "invalid",
+        "bad_generic": "invalid",
+        "good_source": "valid"
+      },
+      "source_probes": {
+        "probe_bad": {
+          "anchor": {
+            "present": true,
+            "quote": "The initial value of total is 7."
+          },
+          "repair": {
+            "present": false,
+            "quote": ""
+          },
+          "foil": {
+            "present": false,
+            "quote": ""
+          }
+        },
+        "probe_good": {
+          "anchor": {
+            "present": true,
+            "quote": "The initial value of total is 7."
+          },
+          "repair": {
+            "present": true,
+            "quote": "The loop visits exactly 6, 7, 8, 9, 10; the upper endpoint 11 is excluded."
+          },
+          "foil": {
+            "present": false,
+            "quote": ""
+          }
+        }
+      }
+    },
+    {
+      "task": "invoice-03",
+      "family": "arithmetic",
+      "template": "invoice",
+      "complete": true,
+      "qualified": true,
+      "joint_proxy": false,
+      "baseline_false_accept": false,
+      "verdicts": {
+        "bad_neutral": "invalid",
+        "good_neutral": "valid",
+        "good_generic": "valid",
+        "bad_generic": "invalid",
+        "good_source": "valid",
+        "bad_source": "invalid",
+        "wrong_neutral": "invalid"
+      },
+      "source_probes": {
+        "probe_bad": {
+          "foil": {
+            "present": false,
+            "quote": ""
+          },
+          "anchor": {
+            "present": true,
+            "quote": "The net shipping adjustment is 7 - 10 = -3 dollars."
+          },
+          "repair": {
+            "present": false,
+            "quote": ""
+          }
+        },
+        "probe_good": {
+          "foil": {
+            "present": false,
+            "quote": ""
+          },
+          "anchor": {
+            "present": true,
+            "quote": "The net shipping adjustment is 7 - 10 = -3 dollars."
+          },
+          "repair": {
+            "present": true,
+            "quote": "The item subtotal is 9 * 17 = 153 dollars."
+          }
+        }
+      }
+    },
+    {
+      "task": "invoice-04",
+      "family": "arithmetic",
+      "template": "invoice",
+      "complete": true,
+      "qualified": true,
+      "joint_proxy": false,
+      "baseline_false_accept": false,
+      "verdicts": {
+        "bad_neutral": "invalid",
+        "good_neutral": "valid",
+        "good_generic": "valid",
+        "good_source": "valid",
+        "wrong_neutral": "invalid",
+        "bad_source": "invalid",
+        "bad_generic": "invalid"
+      },
+      "source_probes": {
+        "probe_bad": {
+          "anchor": {
+            "present": true,
+            "quote": "The net shipping adjustment is 8 - 11 = -3 dollars."
+          },
+          "repair": {
+            "present": false,
+            "quote": ""
+          },
+          "foil": {
+            "present": false,
+            "quote": ""
+          }
+        },
+        "probe_good": {
+          "anchor": {
+            "present": true,
+            "quote": "The net shipping adjustment is 8 - 11 = -3 dollars."
+          },
+          "repair": {
+            "present": true,
+            "quote": "The item subtotal is 10 * 19 = 190 dollars."
+          },
+          "foil": {
+            "present": false,
+            "quote": ""
+          }
+        }
+      }
+    },
+    {
+      "task": "discount-02",
+      "family": "arithmetic",
+      "template": "discount",
+      "complete": true,
+      "qualified": true,
+      "joint_proxy": false,
+      "baseline_false_accept": false,
+      "verdicts": {
+        "bad_neutral": "invalid",
+        "good_neutral": "valid",
+        "wrong_neutral": "invalid",
+        "bad_generic": "invalid",
+        "bad_source": "invalid",
+        "good_generic": "valid",
+        "good_source": "valid"
+      },
+      "source_probes": {
+        "probe_bad": {
+          "anchor": {
+            "present": true,
+            "quote": "After the first discount alone the price is 1920 dollars."
+          },
+          "repair": {
+            "present": false,
+            "quote": ""
+          },
+          "foil": {
+            "present": false,
+            "quote": ""
+          }
+        },
+        "probe_good": {
+          "anchor": {
+            "present": true,
+            "quote": "After the first discount alone the price is 1920 dollars."
+          },
+          "repair": {
+            "present": true,
+            "quote": "The remaining price fraction is (1 - 20/100) * (1 - 25/100) = 0.6."
+          },
+          "foil": {
+            "present": false,
+            "quote": ""
+          }
+        }
+      }
+    },
+    {
+      "task": "branch-01",
+      "family": "code",
+      "template": "branch",
+      "complete": true,
+      "qualified": true,
+      "joint_proxy": false,
+      "baseline_false_accept": false,
+      "verdicts": {
+        "bad_neutral": "invalid",
+        "good_neutral": "valid",
+        "good_generic": "valid",
+        "good_source": "valid",
+        "bad_source": "invalid",
+        "bad_generic": "invalid",
+        "wrong_neutral": "invalid"
+      },
+      "source_probes": {
+        "probe_bad": {
+          "anchor": {
+            "present": true,
+            "quote": "Immediately after x += 7, x equals 12."
+          },
+          "foil": {
+            "present": false,
+            "quote": ""
+          },
+          "repair": {
+            "present": false,
+            "quote": ""
+          }
+        },
+        "probe_good": {
+          "anchor": {
+            "present": true,
+            "quote": "Immediately after x += 7, x equals 12."
+          },
+          "foil": {
+            "present": false,
+            "quote": ""
+          },
+          "repair": {
+            "present": true,
+            "quote": "The condition tests the updated x = 12, so the multiplication branch runs."
+          }
+        }
+      }
+    },
+    {
+      "task": "system-02",
+      "family": "algebra",
+      "template": "system",
+      "complete": true,
+      "qualified": true,
+      "joint_proxy": false,
+      "baseline_false_accept": false,
+      "verdicts": {
+        "bad_neutral": "invalid",
+        "good_neutral": "valid",
+        "wrong_neutral": "invalid",
+        "good_source": "valid",
+        "bad_source": "invalid",
+        "bad_generic": "invalid",
+        "good_generic": "valid"
+      },
+      "source_probes": {
+        "probe_bad": {
+          "repair": {
+            "present": false,
+            "quote": ""
+          },
+          "foil": {
+            "present": false,
+            "quote": ""
+          },
+          "anchor": {
+            "present": true,
+            "quote": "The right-hand side of the second equation is 13."
+          }
+        },
+        "probe_good": {
+          "repair": {
+            "present": true,
+            "quote": "Adding the equations eliminates y and gives 2*x = 44."
+          },
+          "foil": {
+            "present": false,
+            "quote": ""
+          },
+          "anchor": {
+            "present": true,
+            "quote": "The right-hand side of the second equation is 13."
+          }
+        }
+      }
+    },
+    {
+      "task": "system-03",
+      "family": "algebra",
+      "template": "system",
+      "complete": true,
+      "qualified": true,
+      "joint_proxy": false,
+      "baseline_false_accept": false,
+      "verdicts": {
+        "bad_neutral": "invalid",
+        "good_neutral": "valid",
+        "good_source": "valid",
+        "wrong_neutral": "invalid",
+        "bad_source": "invalid",
+        "good_generic": "valid",
+        "bad_generic": "invalid"
+      },
+      "source_probes": {
+        "probe_bad": {
+          "anchor": {
+            "present": true,
+            "quote": "The right-hand side of the second equation is 15."
+          },
+          "repair": {
+            "present": false,
+            "quote": ""
+          },
+          "foil": {
+            "present": false,
+            "quote": ""
+          }
+        },
+        "probe_good": {
+          "anchor": {
+            "present": true,
+            "quote": "The right-hand side of the second equation is 15."
+          },
+          "repair": {
+            "present": true,
+            "quote": "Adding the equations eliminates y and gives 2*x = 50."
+          },
+          "foil": {
+            "present": false,
+            "quote": ""
+          }
+        }
+      }
+    },
+    {
+      "task": "range-01",
+      "family": "code",
+      "template": "range",
+      "complete": true,
+      "qualified": true,
+      "joint_proxy": false,
+      "baseline_false_accept": false,
+      "verdicts": {
+        "bad_neutral": "invalid",
+        "good_neutral": "valid",
+        "bad_generic": "invalid",
+        "good_source": "valid",
+        "wrong_neutral": "invalid",
+        "good_generic": "valid",
+        "bad_source": "invalid"
+      },
+      "source_probes": {
+        "probe_bad": {
+          "anchor": {
+            "present": true,
+            "quote": "The initial value of total is 4."
+          },
+          "foil": {
+            "present": false,
+            "quote": ""
+          },
+          "repair": {
+            "present": false,
+            "quote": ""
+          }
+        },
+        "probe_good": {
+          "anchor": {
+            "present": true,
+            "quote": "The initial value of total is 4."
+          },
+          "foil": {
+            "present": false,
+            "quote": ""
+          },
+          "repair": {
+            "present": true,
+            "quote": "The loop visits exactly 3, 4, 5, 6, 7; the upper endpoint 8 is excluded."
+          }
+        }
+      }
+    },
+    {
+      "task": "invoice-01",
+      "family": "arithmetic",
+      "template": "invoice",
+      "complete": true,
+      "qualified": true,
+      "joint_proxy": false,
+      "baseline_false_accept": false,
+      "verdicts": {
+        "bad_neutral": "invalid",
+        "good_neutral": "valid",
+        "good_source": "valid",
+        "bad_source": "invalid",
+        "bad_generic": "invalid",
+        "wrong_neutral": "invalid",
+        "good_generic": "valid"
+      },
+      "source_probes": {
+        "probe_bad": {
+          "anchor": {
+            "present": true,
+            "quote": "The net shipping adjustment is 5 - 8 = -3 dollars."
+          },
+          "foil": {
+            "present": false,
+            "quote": ""
+          },
+          "repair": {
+            "present": false,
+            "quote": ""
+          }
+        },
+        "probe_good": {
+          "anchor": {
+            "present": true,
+            "quote": "The net shipping adjustment is 5 - 8 = -3 dollars."
+          },
+          "foil": {
+            "present": false,
+            "quote": ""
+          },
+          "repair": {
+            "present": true,
+            "quote": "The item subtotal is 7 * 13 = 91 dollars."
+          }
+        }
+      }
+    },
+    {
+      "task": "branch-02",
+      "family": "code",
+      "template": "branch",
+      "complete": true,
+      "qualified": true,
+      "joint_proxy": false,
+      "baseline_false_accept": false,
+      "verdicts": {
+        "bad_neutral": "invalid",
+        "good_neutral": "valid",
+        "wrong_neutral": "invalid",
+        "good_source": "valid",
+        "good_generic": "valid",
+        "bad_generic": "invalid",
+        "bad_source": "invalid"
+      },
+      "source_probes": {
+        "probe_bad": {
+          "foil": {
+            "present": false,
+            "quote": ""
+          },
+          "anchor": {
+            "present": true,
+            "quote": "Immediately after x += 8, x equals 14."
+          },
+          "repair": {
+            "present": false,
+            "quote": ""
+          }
+        },
+        "probe_good": {
+          "foil": {
+            "present": false,
+            "quote": ""
+          },
+          "anchor": {
+            "present": true,
+            "quote": "Immediately after x += 8, x equals 14."
+          },
+          "repair": {
+            "present": true,
+            "quote": "The condition tests the updated x = 14, so the multiplication branch runs."
+          }
+        }
+      }
+    },
+    {
+      "task": "branch-03",
+      "family": "code",
+      "template": "branch",
+      "complete": true,
+      "qualified": true,
+      "joint_proxy": false,
+      "baseline_false_accept": false,
+      "verdicts": {
+        "bad_neutral": "invalid",
+        "good_neutral": "valid",
+        "bad_generic": "invalid",
+        "good_generic": "valid",
+        "wrong_neutral": "invalid",
+        "bad_source": "invalid",
+        "good_source": "valid"
+      },
+      "source_probes": {
+        "probe_bad": {
+          "foil": {
+            "present": false,
+            "quote": ""
+          },
+          "anchor": {
+            "present": true,
+            "quote": "Immediately after x += 9, x equals 16."
+          },
+          "repair": {
+            "present": false,
+            "quote": ""
+          }
+        },
+        "probe_good": {
+          "foil": {
+            "present": false,
+            "quote": ""
+          },
+          "anchor": {
+            "present": true,
+            "quote": "Immediately after x += 9, x equals 16."
+          },
+          "repair": {
+            "present": true,
+            "quote": "The condition tests the updated x = 16, so the multiplication branch runs."
+          }
+        }
+      }
+    },
+    {
+      "task": "range-03",
+      "family": "code",
+      "template": "range",
+      "complete": true,
+      "qualified": true,
+      "joint_proxy": false,
+      "baseline_false_accept": false,
+      "verdicts": {
+        "bad_neutral": "invalid",
+        "good_neutral": "valid",
+        "good_generic": "valid",
+        "wrong_neutral": "invalid",
+        "bad_generic": "invalid",
+        "bad_source": "invalid",
+        "good_source": "valid"
+      },
+      "source_probes": {
+        "probe_bad": {
+          "anchor": {
+            "present": true,
+            "quote": "The initial value of total is 6."
+          },
+          "repair": {
+            "present": false,
+            "quote": ""
+          },
+          "foil": {
+            "present": false,
+            "quote": ""
+          }
+        },
+        "probe_good": {
+          "anchor": {
+            "present": true,
+            "quote": "The initial value of total is 6."
+          },
+          "repair": {
+            "present": true,
+            "quote": "The loop visits exactly 5, 6, 7, 8, 9; the upper endpoint 10 is excluded."
+          },
+          "foil": {
+            "present": false,
+            "quote": ""
+          }
+        }
+      }
+    },
+    {
+      "task": "invoice-02",
+      "family": "arithmetic",
+      "template": "invoice",
+      "complete": true,
+      "qualified": true,
+      "joint_proxy": false,
+      "baseline_false_accept": false,
+      "verdicts": {
+        "bad_neutral": "invalid",
+        "good_neutral": "valid",
+        "good_source": "valid",
+        "good_generic": "valid",
+        "bad_generic": "invalid",
+        "bad_source": "invalid",
+        "wrong_neutral": "invalid"
+      },
+      "source_probes": {
+        "probe_bad": {
+          "repair": {
+            "present": false,
+            "quote": ""
+          },
+          "foil": {
+            "present": false,
+            "quote": ""
+          },
+          "anchor": {
+            "present": true,
+            "quote": "The net shipping adjustment is 6 - 9 = -3 dollars."
+          }
+        },
+        "probe_good": {
+          "repair": {
+            "present": true,
+            "quote": "The item subtotal is 8 * 15 = 120 dollars."
+          },
+          "foil": {
+            "present": false,
+            "quote": ""
+          },
+          "anchor": {
+            "present": true,
+            "quote": "The net shipping adjustment is 6 - 9 = -3 dollars."
+          }
+        }
+      }
+    },
+    {
+      "task": "linear-01",
+      "family": "algebra",
+      "template": "linear",
+      "complete": true,
+      "qualified": true,
+      "joint_proxy": false,
+      "baseline_false_accept": false,
+      "verdicts": {
+        "bad_neutral": "invalid",
+        "good_neutral": "valid",
+        "good_generic": "valid",
+        "good_source": "valid",
+        "wrong_neutral": "invalid",
+        "bad_source": "invalid",
+        "bad_generic": "invalid"
+      },
+      "source_probes": {
+        "probe_bad": {
+          "anchor": {
+            "present": true,
+            "quote": "The coefficient of x in the original equation is 3."
+          },
+          "foil": {
+            "present": false,
+            "quote": ""
+          },
+          "repair": {
+            "present": false,
+            "quote": ""
+          }
+        },
+        "probe_good": {
+          "anchor": {
+            "present": true,
+            "quote": "The coefficient of x in the original equation is 3."
+          },
+          "foil": {
+            "present": false,
+            "quote": ""
+          },
+          "repair": {
+            "present": true,
+            "quote": "Subtracting 7 from both sides gives 3*x = 42."
+          }
+        }
+      }
+    },
+    {
+      "task": "linear-03",
+      "family": "algebra",
+      "template": "linear",
+      "complete": true,
+      "qualified": true,
+      "joint_proxy": false,
+      "baseline_false_accept": false,
+      "verdicts": {
+        "bad_neutral": "invalid",
+        "good_neutral": "valid",
+        "bad_generic": "invalid",
+        "bad_source": "invalid",
+        "good_generic": "valid",
+        "wrong_neutral": "invalid",
+        "good_source": "valid"
+      },
+      "source_probes": {
+        "probe_bad": {
+          "foil": {
+            "present": false,
+            "quote": ""
+          },
+          "repair": {
+            "present": false,
+            "quote": ""
+          },
+          "anchor": {
+            "present": true,
+            "quote": "The coefficient of x in the original equation is 5."
+          }
+        },
+        "probe_good": {
+          "foil": {
+            "present": false,
+            "quote": ""
+          },
+          "repair": {
+            "present": true,
+            "quote": "Subtracting 9 from both sides gives 5*x = 80."
+          },
+          "anchor": {
+            "present": true,
+            "quote": "The coefficient of x in the original equation is 5."
+          }
+        }
+      }
+    },
+    {
+      "task": "branch-04",
+      "family": "code",
+      "template": "branch",
+      "complete": true,
+      "qualified": true,
+      "joint_proxy": false,
+      "baseline_false_accept": false,
+      "verdicts": {
+        "bad_neutral": "invalid",
+        "good_neutral": "valid",
+        "good_generic": "valid",
+        "good_source": "valid",
+        "wrong_neutral": "invalid",
+        "bad_generic": "invalid",
+        "bad_source": "invalid"
+      },
+      "source_probes": {
+        "probe_bad": {
+          "repair": {
+            "present": false,
+            "quote": ""
+          },
+          "foil": {
+            "present": false,
+            "quote": ""
+          },
+          "anchor": {
+            "present": true,
+            "quote": "Immediately after x += 10, x equals 18."
+          }
+        },
+        "probe_good": {
+          "repair": {
+            "present": true,
+            "quote": "The condition tests the updated x = 18, so the multiplication branch runs."
+          },
+          "foil": {
+            "present": false,
+            "quote": ""
+          },
+          "anchor": {
+            "present": true,
+            "quote": "Immediately after x += 10, x equals 18."
+          }
+        }
+      }
+    },
+    {
+      "task": "linear-04",
+      "family": "algebra",
+      "template": "linear",
+      "complete": true,
+      "qualified": true,
+      "joint_proxy": false,
+      "baseline_false_accept": false,
+      "verdicts": {
+        "bad_neutral": "invalid",
+        "good_neutral": "valid",
+        "bad_generic": "invalid",
+        "good_source": "valid",
+        "good_generic": "valid",
+        "wrong_neutral": "invalid",
+        "bad_source": "invalid"
+      },
+      "source_probes": {
+        "probe_bad": {
+          "anchor": {
+            "present": true,
+            "quote": "The coefficient of x in the original equation is 6."
+          },
+          "foil": {
+            "present": false,
+            "quote": ""
+          },
+          "repair": {
+            "present": false,
+            "quote": ""
+          }
+        },
+        "probe_good": {
+          "anchor": {
+            "present": true,
+            "quote": "The coefficient of x in the original equation is 6."
+          },
+          "foil": {
+            "present": false,
+            "quote": ""
+          },
+          "repair": {
+            "present": true,
+            "quote": "Subtracting 10 from both sides gives 6*x = 102."
+          }
+        }
+      }
+    },
+    {
+      "task": "system-04",
+      "family": "algebra",
+      "template": "system",
+      "complete": true,
+      "qualified": true,
+      "joint_proxy": false,
+      "baseline_false_accept": false,
+      "verdicts": {
+        "bad_neutral": "invalid",
+        "good_neutral": "valid",
+        "bad_source": "invalid",
+        "good_generic": "valid",
+        "bad_generic": "invalid",
+        "good_source": "valid",
+        "wrong_neutral": "invalid"
+      },
+      "source_probes": {
+        "probe_bad": {
+          "repair": {
+            "present": false,
+            "quote": ""
+          },
+          "anchor": {
+            "present": true,
+            "quote": "The right-hand side of the second equation is 17."
+          },
+          "foil": {
+            "present": false,
+            "quote": ""
+          }
+        },
+        "probe_good": {
+          "repair": {
+            "present": true,
+            "quote": "Adding the equations eliminates y and gives 2*x = 56."
+          },
+          "anchor": {
+            "present": true,
+            "quote": "The right-hand side of the second equation is 17."
+          },
+          "foil": {
+            "present": false,
+            "quote": ""
+          }
+        }
+      }
+    }
+  ],
+  "interpretation": "Exploratory behavioral screen. Attribution after a verdict can reflect post-hoc rationalization; it does not establish internal reconstruction, causal mediation, or novelty. Six templates provide limited diversity."
+}
