@@ -1,18 +1,28 @@
 # Reconstruction pilot
 
-Does a language model approve flawed reasoning and then attribute a missing repair to the original solution?
+This pilot tests a possible grading error: accepting a flawed solution, then
+attributing an unwritten repair to it. Sonnet rejected all 24 flawed solutions
+under neutral grading and never falsely attributed a missing repair in the
+corresponding source questions. The run finished with 240/240 valid responses
+and stopped at the planned `stop_no_clear_failure` decision.
 
-**Status: completed null screen; no further experiments planned for this design.** All **240 evaluations** returned valid responses. The model mistakenly approved **0/24** flawed solutions in the neutral baseline and falsely attributed a missing repair in **0/24** corresponding source probes. The behavioral prerequisite for the proposed follow-up did not appear.
+The experiment used `claude-sonnet-5-5` with adaptive thinking at high effort.
+The 24 matched problems come from six templates in arithmetic, algebra, and
+short Python traces. Results and raw responses are in
+[the completed run](results/2026-10-11-reconstruction/).
 
-The experiment used `claude-sonnet-5-5` with adaptive thinking at high effort. The frozen dataset contains 24 matched problems from six templates in arithmetic, algebra, and short Python traces. Results and raw responses are in [the completed run](results/2026-10-11-reconstruction/).
-
-## What the experiment tests
+## Experiment
 
 Each problem has a correct solution and a version containing an explicitly false intermediate step but the correct final answer. The model independently solves the problem, grades the supplied solutions, and answers questions about which claims were present in the text.
 
-The key proposed failure requires both mistaken approval and false attribution of a missing repair on the same problem. Two grading interventions compare a generic checking reminder with an instruction to separate written steps from inferred repairs. Valid-solution controls check whether an intervention simply increases rejection.
+The proposed failure requires both mistaken approval and false attribution on
+the same problem. Two grading prompts add either a generic checking reminder or
+an instruction to separate written steps from inferred repairs. Correct-solution
+controls check whether those prompts simply increase rejection.
 
-Source questions come after the verdict and replay the visible response. They cannot establish what happened internally while the model made its initial judgment. The complete design and thresholds are in the [frozen protocol](docs/protocol.md).
+The source questions come after the verdict and replay the visible response,
+so they cannot establish what happened internally during grading. The
+[protocol](docs/protocol.md) gives the full design and stopping rules.
 
 ## Results
 
@@ -27,17 +37,22 @@ Source questions come after the verdict and replay the visible response. They ca
 | Problems showing both approval and false attribution | 0/24 |
 | Valid solutions accepted with generic checking / source separation | 23/24 / 24/24 |
 
-All flawed solutions were also rejected under both intervention prompts. With no baseline mistaken approvals to correct, this run cannot establish whether either intervention would help on a task where the failure occurs. The one generic-check error was rejection of a valid solution.
+Both checking prompts also led to rejection of every flawed solution. With no
+mistaken approvals in the baseline, the run cannot tell whether either prompt
+would help when that failure occurs. The generic reminder led to one rejection
+of a correct solution.
 
-The frozen decision was **`stop_no_clear_failure`**. Collection had no invalid responses or transport failures. Recorded usage cost was **$0.616630**; the conservative reservation was **$9.711360** against the $10 cap. The reservation is not the observed bill.
+There were no invalid responses or transport failures. Recorded usage cost was
+$0.616630, below the budget guard's conservative reservation of $9.711360 against
+the $10 cap.
 
 See the [run report](results/2026-10-11-reconstruction/report.md), [full analysis](results/2026-10-11-reconstruction/analysis.json), and [raw requests and responses](results/2026-10-11-reconstruction/attempts.jsonl).
 
-## What this result means
-
-The tested model caught these short, explicit errors under prompts that defined false intermediate steps as invalid. This does not rule out reconstruction-like behavior on longer, subtler, or differently framed tasks. The 24 problems share six templates and do not represent 24 independent problem families.
-
-The screen did not meet its prespecified continuation criteria, so this design is parked. Task difficulty and wording were not changed after collection to obtain the predicted effect. No mechanistic conclusion follows from the null result. See [related work](docs/related_work.md) for the distinction between established findings and the hypothesis tested here.
+The errors were short and explicit, and the grading instructions defined false
+intermediate steps as invalid. Longer or subtler errors remain untested; the 24
+problems cover only six templates. This design did not meet the criteria for a
+follow-up, so no further runs are planned. See [related work](docs/related_work.md)
+for the motivation behind the hypothesis.
 
 ## Inspect and reproduce the results
 
@@ -50,4 +65,6 @@ python3 -m unittest discover -s tests -v
 python3 -m reconstruction_pilot plan
 ```
 
-The original [run instructions](docs/RUNNING.md) cover optional live execution, simulations, resumption, and the spending guard. Only `run --execute` sends model API requests. Synthetic simulations are labeled as software fixtures and are separate from the empirical results above.
+The [run instructions](docs/RUNNING.md) cover live execution, simulations,
+resumption, and the spending guard. Only `run --execute` sends model API requests;
+the simulations check the software.
